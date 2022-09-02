@@ -1,0 +1,16 @@
+<div class="text-center">
+  <h1>Pagination</h1>
+</div>
+<div class="list">
+  <paging-controls [isItemsPerPage]="true"></paging-controls>
+  <ul>
+    <li *ngFor="let item of collection | paginate: { currentPage: p }">
+      {{ item }}
+    </li>
+  </ul>
+
+  <paging-controls
+    (pageChange)="p = $event"
+    [isItemsPerPage]="false"
+  ></paging-controls>
+</div>
